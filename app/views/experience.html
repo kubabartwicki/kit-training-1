@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Question page
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a class="link-back" href="/juggling-trick">Back</a>
+
+      <form class="form" action="/check-your-answers" method="post">
+        <legend>
+          <h1 class="heading-large">
+            <label for="select-box">Experienced yeah?</label>
+          </h1>
+        </legend>
+        <div class="form-group">
+          <select class="form-control" id="select-box" name="select-box">
+            <option>Been juggling 1–2 years</option>
+            <option>Been juggling 3–5 years</option>
+            <option>Been juggling my whole life</option>
+          </select>
+        </div>
+
+        <p class="form-hint">Not too important how long you have been doing this</p>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

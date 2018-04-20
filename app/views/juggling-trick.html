@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Question page
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a class="link-back" href="/juggling-balls">Back</a>
+
+      <form class="form" action="/experience" method="post">
+
+        <fieldset class="form-group">
+          <legend>
+            <h1 class="heading-large">
+              <label for="trick">Describe your most impressive juggling trick</label>
+            </h1>
+          </legend>
+          <div class="form-group">
+            <textarea class="form-control form-control-3-4" name="juggling-trick" id="juggling-trick" rows="5">
+{{ data['juggling-trick'] }}</textarea>
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

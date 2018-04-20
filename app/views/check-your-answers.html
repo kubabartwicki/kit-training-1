@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Check your answers
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <a href="/juggling-trick" class="link-back">Back</a>
+
+      <h1 class="heading-large">
+        Check your answers before sending your application
+      </h1>
+
+      <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
+      <!--   * `cya-questions-short` for short questions -->
+      <!--   * `cya-questions-long` for long questions -->
+      <!--   * none for single group of q&a -->
+      <dl class="govuk-check-your-answers cya-questions-short">
+        <div>
+          <dt class="cya-question">
+            Number of balls you can juggle
+          </dt>
+          <dd class="cya-answer">
+            {{ data["juggling-balls"] }} 
+          </dd>
+          <dd class="cya-change">
+            <a href="juggling-balls">
+              Change<span class="visually-hidden"> number of balls</span>
+            </a>
+          </dd>
+        </div>
+
+        <div>
+          <dt class="cya-question">
+            Your most impressive juggling feat
+          </dt>
+          <dd class="cya-answer">
+            {{ data["juggling-trick"] }}
+          </dd>
+          <dd class="cya-change">
+            <a href="/juggling-trick">
+              Change<span class="visually-hidden"> juggling trick</span>
+            </a>
+          </dd>
+        </div>
+
+        <div>
+          <dt class="cya-question">
+            Years of experience
+          </dt>
+          <dd class="cya-answer">
+            {{ data["select-box"] }}
+          </dd>
+          <!-- 
+            if i have a checkbox, i can do this:
+            {#  {% for item in data['select-box'] %}#}
+          -->
+          <!-- nunjucks!!! node.js express!!! --> 
+
+          <dd class="cya-change">
+            <a href="/juggling-trick">
+              Change<span class="visually-hidden"> years of experience</span>
+            </a>
+          </dd>
+        </div>
+
+
+      </dl>
+
+
+
+      <h2 class="heading-medium">Now send your application</h2>
+
+      <p class="text">
+        By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.
+      </p>
+
+      <div class="form-group">
+        <a href="/confirmation" class="button">Accept and send application</a>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
